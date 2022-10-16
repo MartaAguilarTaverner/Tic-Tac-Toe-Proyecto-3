@@ -1,7 +1,33 @@
-.my-container {
+/* General for all */
+
+body {
+    margin: 0;
     height: 100vh;
     width: 100vw;
 }
+
+/* Index Page/Start */
+
+.my-container {
+    background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
+    background-size: cover;
+}
+
+/* Select Players Page */
+
+.selectplayers-container {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/wp8984722-tic-tac-toe-wallpapers.jpg);
+    background-size: cover;
+}
+
+
+
+
+
+
+ /* Players board */
 
 .card-newgame{
     height: 50vh;
@@ -10,6 +36,7 @@
 }
 
 /* BoardPart */
+
 .board-toe {
     height: 100%;
     width: 100%;
@@ -25,5 +52,6 @@
     border-style: solid;
     border-color: darkgreen; 
     background-color: rgb(251, 253, 236); 
+
 }
 
