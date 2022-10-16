@@ -21,30 +21,15 @@
         <title>Tic-Tac-Toe-Battle</title>
     </head>
     <body>
-        <script src="../js/main.js"></script>
         <div class="container mygame-container d-flex h-100 w-100">
             <div class="row w-100 h-100 m-0">
                 <div class="col-12 col-xl-4 p-0">
                     <div
                         class="id-players-moves h-100 d-flex flex-column justify-content-center align-items-center"
                     >
-                        <div>
-                            <div class="d-grid gap-3">
-                                <button
-                                    type="button"
-                                    class="btn btn-primary btn-block"
-                                >
-                                    Player Number 1:
-                                </button>
-                                <button
-                                    type="button"
-                                    class="btn btn-primary btn-block"
-                                >
-                                    Player Number 2:
-                                </button>
-                            </div>
-                        </div>
-                        <div></div>
+                        <div id="player1info"></div>
+                        <div id="player2info"></div>
+                        <div id="activePlayer"></div>
                     </div>
                 </div>
                 <div class="col-12 col-xl-8 p-0">
@@ -82,5 +67,6 @@
                 </div>
             </div>
         </div>
+        <script src="../js/main.js"></script>
     </body>
 </html>
