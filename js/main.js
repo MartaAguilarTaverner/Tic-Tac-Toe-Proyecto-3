@@ -23,7 +23,7 @@ class TicTacToe {
         this.player2.name = player2;
         this.player1.type = player1Type;
         this.player2.type = player2Type;
-        this.activePlayer = player1;
+        this.activePlayer = this.player1;
     }
 
     changeActivePlayer() {
@@ -32,11 +32,20 @@ class TicTacToe {
         } else {
             this.activePlayer = this.player1;
         }
+
+        const activePlayerEl = document.getElementById("activePlayer");
+        activePlayerEl.textContent = `Turn of: ${this.activePlayer.name}`;
     }
 
     makeMove(row, col) {
-        this.board[row][col] = this.activePlayer.symbol;
+        const symbol = this.activePlayer.symbol;
+
+        this.board[row][col] = symbol;
         this.activePlayer.moves += 1;
+
+        this.changeActivePlayer();
+
+        return symbol;
     }
 
     clearCell(row, col) {
@@ -90,23 +99,31 @@ if (window.location.href.includes("SelectPlayers")) {
             player2NameValue = player2Name.value;
         }
 
-        const game = new TicTacToe(
-            player1NameValue,
-            player2NameValue,
-            player1TypeValue,
-            player2TypeValue
-        );
-
-        sessionStorage.setItem("game", JSON.stringify(game));
+        sessionStorage.setItem("player1NameValue", player1NameValue);
+        sessionStorage.setItem("player2NameValue", player2NameValue);
+        sessionStorage.setItem("player1TypeValue", player1TypeValue);
+        sessionStorage.setItem("player2TypeValue", player2TypeValue);
 
         window.location.href = "../pages/game.html";
     });
 }
 
 if (window.location.href.includes("game")) {
-    const game = JSON.parse(sessionStorage.getItem("game"));
+    let game;
 
     const initGame = () => {
+        const player1NameValue = sessionStorage.getItem("player1NameValue");
+        const player2NameValue = sessionStorage.getItem("player2NameValue");
+        const player1TypeValue = sessionStorage.getItem("player1TypeValue");
+        const player2TypeValue = sessionStorage.getItem("player2TypeValue");
+
+        game = new TicTacToe(
+            player1NameValue,
+            player2NameValue,
+            player1TypeValue,
+            player2TypeValue
+        );
+
         const player1 = document.getElementById("player1info");
         const player2 = document.getElementById("player2info");
         const activePlayer = document.getElementById("activePlayer");
@@ -116,48 +133,51 @@ if (window.location.href.includes("game")) {
         activePlayer.textContent = `Turn of: ${game.activePlayer.name}`;
     };
 
-    const box0 = document.getElementById("box0");
-    box0.addEventListener("click", () => {
-        if (this.activePlayer.moves === 3) {
-            game.clearCell(0, 0);
-        } else if (!game.board[0][0]) {
-            game.makeMove(0, 0);
+    const onClickCell = (row, col, cell) => {
+        if (game.activePlayer.moves === 3) {
+            game.clearCell(row, col);
+
+            cell.innerHTML = "";
+        } else if (!game.board[row][col]) {
+            const symbol = game.makeMove(row, col);
+            const symbolEl = document.createElement("img");
+
+            symbolEl.src =
+                symbol === "X" ? "../img/cross.png" : "../img/circle.png";
+
+            symbolEl.classList.add("token-image");
+            cell.appendChild(symbolEl);
         } else {
             alert("Choose a new cell");
         }
-    });
+    };
+
+    const box0 = document.getElementById("box0");
+    box0.addEventListener("click", () => onClickCell(0, 0, box0));
+
     const box1 = document.getElementById("box1");
-    box1.addEventListener("click", () => {
-        console.log("box1");
-    });
+    box1.addEventListener("click", () => onClickCell(0, 1, box1));
+
     const box2 = document.getElementById("box2");
-    box2.addEventListener("click", () => {
-        console.log("box2");
-    });
+    box2.addEventListener("click", () => onClickCell(0, 2, box2));
+
     const box3 = document.getElementById("box3");
-    box3.addEventListener("click", () => {
-        console.log("box3");
-    });
+    box3.addEventListener("click", () => onClickCell(1, 0, box3));
+
     const box4 = document.getElementById("box4");
-    box4.addEventListener("click", () => {
-        console.log("box4");
-    });
+    box4.addEventListener("click", () => onClickCell(1, 1, box4));
+
     const box5 = document.getElementById("box5");
-    box5.addEventListener("click", () => {
-        console.log("box5");
-    });
+    box5.addEventListener("click", () => onClickCell(1, 2, box5));
+
     const box6 = document.getElementById("box6");
-    box6.addEventListener("click", () => {
-        console.log("box6");
-    });
+    box6.addEventListener("click", () => onClickCell(1, 2, box6));
+
     const box7 = document.getElementById("box7");
-    box7.addEventListener("click", () => {
-        console.log("box7");
-    });
+    box7.addEventListener("click", () => onClickCell(2, 1, box7));
+
     const box8 = document.getElementById("box8");
-    box8.addEventListener("click", () => {
-        console.log("box8");
-    });
+    box8.addEventListener("click", () => onClickCell(2, 2, box8));
 
     initGame();
 }
