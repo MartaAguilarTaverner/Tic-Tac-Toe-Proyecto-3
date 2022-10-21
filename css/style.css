@@ -1,5 +1,4 @@
 /* General for all */
-
 body {
     margin: 0;
     height: 100vh;
@@ -7,14 +6,36 @@ body {
 }
 
 /* Index Page/Start */
-
 .my-container {
-    background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
-    background-size: cover;
+    height: 100vh;
+    background:conic-gradient(#224e23, #52ff82, #42c1b4, #51db30, #3e93cf, 
+                                #064548, #2e342c, #90b732, #27a12d, #76e3bf, 
+                                #7ee173, #214421, #2fffa8, #7bff5d, #0dab5a, 
+                                #1d4214);
+}
+
+.my-container div {
+    width: 100vw;
+}
+
+.startgame-but {
+    box-shadow: rgb(251 255 0) 0px 54px 55px, rgb(228 255 0 / 94%) 0px -12px 30px, 
+                rgb(0 255 173) 0px 4px 6px, rgb(255 2 2 / 99%) 0px 12px 13px, 
+                rgb(235 0 217) 0px -3px 5px;
+    
+}
+
+.ticTac {
+    margin-bottom: 0rem;
+    margin-top: 0.6rem;
+}
+
+.toeStart {
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
 }
 
 /* Select Players Page */
-
 .selectplayers-container {
     height: 100%;
     width: 100%;
@@ -22,21 +43,36 @@ body {
     background-size: cover;
 }
 
-
-
-
-
-
- /* Players board */
-
 .card-newgame{
     height: 50vh;
     width: 60vw;
     background-color:rgb(223, 255, 223)
 }
 
-/* BoardPart */
+@media (min-width:320px) and (max-width:810px) {
+    .card-newgame {
+        height: 45vh;
+        width: 100vw;
+    }
+}
 
+
+
+ /* Players nex to the board */
+#player1info {
+    height: 5vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-style: solid;
+    border-color: green;
+    border-radius: 0.35rem;
+
+}
+
+/* BoardPart */
 .board-toe {
     height: 100%;
     width: 100%;
@@ -44,14 +80,58 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .box {
-    border:0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 29vh;
+    border:0.4rem;
     border-style: solid;
     border-color: darkgreen; 
     background-color: rgb(251, 253, 236); 
+}
 
+#box0 {
+    border-top: 0;
+    border-left: 0
+}
+
+#box1 {
+    border-top: 0;
+}
+
+#box2 {
+    border-top: 0;
+    border-right: 0;
+}
+
+#box3 {
+    border-left: 0;
+}
+
+#box5 {
+    border-right: 0;
+}
+
+#box6 {
+    border-left: 0;
+    border-bottom: 0;
+}
+
+#box7 {
+    border-bottom: 0;
+}
+
+#box8 {
+    border-right: 0;
+    border-bottom: 0;
+}
+
+/* Token Images */
+.token-image {
+    height: 100px;
+    width: 100px;
 }
 
