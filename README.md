@@ -1,4 +1,4 @@
-# <font color="green">~Tic Tac Toe~ </font> <img src="/img/imgreadme/Screenshot_screen3tokens.png" width="40">
+# <font color="green">Tic Tac Toe </font> <img src="/img/imgreadme/Screenshot_screen3tokens.png" width="40">
 
 ---
 
