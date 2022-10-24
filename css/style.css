@@ -35,18 +35,22 @@ body {
     margin-bottom: 0.6rem;
 }
 
+
 /* Select Players Page */
 .selectplayers-container {
-    height: 100%;
-    width: 100%;
-    background-image: url(../img/wp8984722-tic-tac-toe-wallpapers.jpg);
-    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-color: #2a2828;
 }
 
 .card-newgame{
+    border-style: solid;
+    box-shadow: rgb(255 0 224) 0px 10px 50px 0px;
+    border-radius: 3rem;
     height: 50vh;
     width: 60vw;
-    background-color:rgb(223, 255, 223)
+    background-color:rgb(223, 255, 223);
+    margin-bottom: 3rem;
 }
 
 @media (min-width:320px) and (max-width:810px) {
@@ -56,20 +60,65 @@ body {
     }
 }
 
-
+/* Game Page*/
+.mygame-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2a2828;
+}
 
  /* Players nex to the board */
 #player1info {
+    margin: 0.3rem;
     height: 5vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(117, 255, 135);
+    border-style: solid;
+    border-color: rgb(8, 75, 8);
+    border-radius: 0.35rem;
+}
+
+#player2info {
+    margin: 0.3rem;
+    height: 5vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(117, 255, 135);
+    border-style: solid;
+    border-color: rgb(8, 75, 8);
+    border-radius: 0.35rem;
+}
+
+#activePlayer {
+    margin: 0.3rem;
+    height: 7vh;
     width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: pink;
+    background-color: rgb(247, 255, 131);
     border-style: solid;
-    border-color: green;
+    border-color: rgb(124, 146, 0);
     border-radius: 0.35rem;
+}
 
+/* Buttons Game */
+
+.game-but {
+    margin-top: 1rem;
+    background-color: rgb(252, 42, 252);
+    color: black;
+    width: 10vw;
+}
+
+.game-but:hover {
+    background-color: purple;
+    color: whitesmoke;
 }
 
 /* BoardPart */
@@ -82,6 +131,10 @@ body {
     justify-content: center;
 }
 
+.board-border {
+    border-radius: 3rem;
+    box-shadow: rgb(255 0 224) 0px 10px 50px 0px;
+}
 .box {
     display: flex;
     justify-content: center;
@@ -90,43 +143,47 @@ body {
     border:0.4rem;
     border-style: solid;
     border-color: darkgreen; 
-    background-color: rgb(251, 253, 236); 
+    background-color: rgb(218, 218, 218); 
 }
 
-#box0 {
+#box-0-0 {
     border-top: 0;
-    border-left: 0
+    border-left: 0;
+    border-radius: 3rem 0 0 0;
 }
 
-#box1 {
+#box-0-1 {
     border-top: 0;
 }
 
-#box2 {
+#box-0-2 {
     border-top: 0;
     border-right: 0;
+    border-radius: 0 3rem 0 0;
 }
 
-#box3 {
+#box-1-0 {
     border-left: 0;
 }
 
-#box5 {
+#box-1-2 {
     border-right: 0;
 }
 
-#box6 {
+#box-2-0 {
     border-left: 0;
     border-bottom: 0;
+    border-radius: 0 0 0 3rem;
 }
 
-#box7 {
+#box-2-1 {
     border-bottom: 0;
 }
 
-#box8 {
+#box-2-2 {
     border-right: 0;
     border-bottom: 0;
+    border-radius: 0 0 3rem 0;
 }
 
 /* Token Images */
@@ -135,3 +192,64 @@ body {
     width: 100px;
 }
 
+/* Results Page */
+.winner-container {
+    height: 100vh;
+    background:conic-gradient(#224e23, #52ff82, #42c1b4, #51db30, #3e93cf, 
+                                #064548, #2e342c, #90b732, #27a12d, #76e3bf, 
+                                #7ee173, #214421, #2fffa8, #7bff5d, #0dab5a, 
+                                #1d4214);
+}
+
+.winner-container div {
+    width: 100vw;
+}
+
+.winner-page {
+    flex-direction: column;
+}
+
+.thewinner-but {
+    margin: 1rem;
+    width: 40vw;
+    color: white;
+    background-color: black;
+    font-size: 6rem;
+    height: 20vh;
+}
+
+.thewinner-but:hover{
+    color: white;
+    background-color: black;
+}
+
+.name-winner-but {
+    margin: 1rem;
+    width: 30vw;
+    color: rgb(233, 22, 233);
+    background-color: black;
+    font-size: 6rem;
+    height: 20vh;
+    box-shadow: rgb(251 255 0) 0px 54px 55px, rgb(228 255 0 / 94%) 0px -12px 30px, 
+                rgb(0 255 173) 0px 4px 6px, rgb(255 2 2 / 99%) 0px 12px 13px, 
+                rgb(235 0 217) 0px -3px 5px;
+}
+
+.name-winner-but:hover{
+    color: rgb(233, 22, 233);
+    background-color: black;
+}
+
+.play-but {
+    margin: 1rem;
+    width: 20vw;
+    height: 20vh;
+    background-color: rgb(233, 22, 233);
+    color: white;
+    font-size: 4rem;
+}
+
+.play-but:hover{
+    color: white;
+    background-color: rgb(150, 19, 150);
+}
