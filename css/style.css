@@ -136,6 +136,12 @@ body {
 }
 
 /* BoardPart */
+.game-board-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board-toe {
     height: 100%;
     width: 100%;
@@ -201,16 +207,72 @@ body {
     border-radius: 0 0 3rem 0;
 }
 
+@media (max-width:1199px) and (min-width:865px) {
+    .box {
+        height: 15vh;
+    }
+    .boxout {
+        height: 11vh;
+    }
+    .board-toe {
+        width: 50%;
+    }
+}
+
+@media (max-width:864px) and (min-width:390px) {
+    .box {
+        height: 14vh;
+    }
+    .boxout {
+        height: 8vh;
+    }
+}
+
+@media (max-width:389px) {
+    .box {
+        height: 12vh;
+    }
+    .boxout {
+        height: 4vh;
+    }
+}
+
+@media (max-width:864px) and (min-width:535px) {
+    .board-toe {
+        width: 70%;
+    }
+}
+
+@media (max-width:534px) {
+    .board-toe {
+        width: 95%;
+    }
+}
+
+
 /* Token Images */
 .token-image {
     height: 100px;
     width: 100px;
 }
 
-@media (max-width:675px) {     
+@media (max-width:979px) and (min-width:865px) {     
     .token-image {
-        height: 50px;
-        width: 50px;
+        height: 80px;
+        width: 80px;
+    }
+}
+@media (max-width:864px) and (min-width:370px) {
+    .token-image {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media (max-width:369px) {
+    .token-image {
+        height: 40px;
+        width: 40px;
     }
 }
 
