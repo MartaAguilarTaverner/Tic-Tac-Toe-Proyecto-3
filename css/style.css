@@ -149,6 +149,7 @@ body {
     border-radius: 3rem;
     box-shadow: rgb(255 0 224) 0px 10px 50px 0px;
 }
+
 .box {
     display: flex;
     justify-content: center;
@@ -252,8 +253,8 @@ body {
     font-size: 6rem;
     height: 20vh;
     box-shadow: rgb(251 255 0) 0px 54px 55px, rgb(228 255 0 / 94%) 0px -12px 30px, 
-                rgb(0 255 173) 0px 4px 6px, rgb(255 2 2 / 99%) 0px 12px 13px, 
-                rgb(235 0 217) 0px -3px 5px;
+    rgb(0 255 173) 0px 4px 6px, rgb(255 2 2 / 99%) 0px 12px 13px, 
+    rgb(235 0 217) 0px -3px 5px;
 }
 
 .name-winner-but:hover{
@@ -273,4 +274,56 @@ body {
 .play-but:hover{
     color: white;
     background-color: rgb(150, 19, 150);
+}
+
+@media (max-width:1681px) {
+    .play-but {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:1510px) and (min-width:1027px) {
+    .thewinner-but {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width:1027px){
+    .thewinner-but {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:1510px) and (min-width:730px) {
+    .name-winner-but {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width:729px) and (min-width:374px) {
+    .name-winner-but {
+        font-size: 3rem;
+        width: 40vw;
+    }
+    .play-but {
+        width: 50vw;
+    }
+    .thewinner-but {
+        width: 60vw;
+    }
+}
+
+@media (max-width:373px) {
+    .name-winner-but {
+        font-size: 2rem;
+        width: 60vw;
+    }
+    .play-but {
+        font-size: 2rem;
+        width: 70vw;
+    }
+    .thewinner-but {
+        font-size: 2rem;
+        width: 80vw;
+    }
 }
