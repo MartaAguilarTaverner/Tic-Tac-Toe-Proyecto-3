@@ -71,7 +71,7 @@ body {
 #player1info {
     margin: 0.3rem;
     height: 5vh;
-    width: 20vw;
+    width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +84,7 @@ body {
 #player2info {
     margin: 0.3rem;
     height: 5vh;
-    width: 20vw;
+    width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +97,7 @@ body {
 #activePlayer {
     margin: 0.3rem;
     height: 7vh;
-    width: 10vw;
+    width: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,17 +108,31 @@ body {
 }
 
 /* Buttons Game */
-
 .game-but {
     margin-top: 1rem;
     background-color: rgb(252, 42, 252);
     color: black;
-    width: 10vw;
+    width: 15vw;
 }
 
 .game-but:hover {
     background-color: purple;
     color: whitesmoke;
+}
+
+@media (max-width:585px) {
+    #player1info {
+        width: 60vw;
+    }
+    #player2info {
+        width: 60vw;
+    }
+    #activePlayer {
+        width: 60vw;
+    }
+    .game-but {
+        width: 30vw;
+    }
 }
 
 /* BoardPart */
@@ -190,6 +204,13 @@ body {
 .token-image {
     height: 100px;
     width: 100px;
+}
+
+@media (max-width:675px) {     
+    .token-image {
+        height: 50px;
+        width: 50px;
+    }
 }
 
 /* Results Page */
